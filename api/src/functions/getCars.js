@@ -11,7 +11,7 @@ app.http('getCars', {
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(data)
+            body: JSON.stringify(JSON.parse(data))
         };
     }
 });
