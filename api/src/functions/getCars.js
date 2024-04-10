@@ -10,9 +10,9 @@ app.http('getCars', {
             const cars = await fs.readFile(path.resolve(__dirname, 'cars.json', 'utf-8'));
             return {
                 status: 200,
-                headers: {
-                    'Content-Type': 'application/json'
-                },
+                // headers: {
+                //     'Content-Type': 'application/json'
+                // },
                 body: JSON.stringify(JSON.parse(cars))
             };
         }
