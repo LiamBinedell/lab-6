@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 function addCar(newCar) {
-    fetch('http://localhost:3001/cars', {
+    fetch('/api/addCar', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
