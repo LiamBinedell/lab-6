@@ -7,12 +7,8 @@ app.http('getCars', {
     authLevel: 'anonymous',
     handler: async (request, context) => {
         try{
-            const cars = await fs.readFile(path.resolve(__dirname, 'cars.json', 'utf-8'));
+            const cars = await fs.readFile(path.resolve(__dirname, 'cars.json'), 'utf-8');
             return {
-                status: 200,
-                // headers: {
-                //     'Content-Type': 'application/json'
-                // },
                 body: JSON.stringify(JSON.parse(cars))
             };
         }
