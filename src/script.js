@@ -27,56 +27,56 @@ document.addEventListener('DOMContentLoaded', () => {
             });
     });
 });
-function addCar(newCar) {
-    fetch('/api/addCar', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(newCar)
-    })
-        .then(response => response.json())
-        .then(data => {
-            console.log('Success:', data);
-            //reload cars
-            // const loadCarsBtn = document.getElementById('loadCarsBtn');
-            loadCarsBtn.click();
-        })
-        .catch(error => {
-            console.error('Error:', error);
-        });
-}
+// function addCar(newCar) {
+//     fetch('/api/addCar', {
+//         method: 'POST',
+//         headers: {
+//             'Content-Type': 'application/json'
+//         },
+//         body: JSON.stringify(newCar)
+//     })
+//         .then(response => response.json())
+//         .then(data => {
+//             console.log('Success:', data);
+//             //reload cars
+//             // const loadCarsBtn = document.getElementById('loadCarsBtn');
+//             loadCarsBtn.click();
+//         })
+//         .catch(error => {
+//             console.error('Error:', error);
+//         });
+// }
 
-carForm.addEventListener('submit', event => {
-    event.preventDefault();
-    const make = document.getElementById('make').value;
-    const model = document.getElementById('model').value;
-    const year = document.getElementById('year').value;
-    const price = document.getElementById('price').value;
-    addCar({ make, model, year, price });
-    carForm.reset();
-});
+// carForm.addEventListener('submit', event => {
+//     event.preventDefault();
+//     const make = document.getElementById('make').value;
+//     const model = document.getElementById('model').value;
+//     const year = document.getElementById('year').value;
+//     const price = document.getElementById('price').value;
+//     addCar({ make, model, year, price });
+//     carForm.reset();
+// });
 
-// Function to remove a car
-function removeCar(index) {
-    fetch(`api/removeCar/${index}`, {
-        method: 'DELETE'
-    })
-        .then(response => response.json())
-        .then(data => {
-            console.log('Success:', data);
-            //reload cars
-            // const loadCarsBtn = document.getElementById('loadCarsBtn');
-            loadCarsBtn.click();
-        })
-        .catch(error => {
-            console.error('Error:', error);
-        });
-}
-// Event delegation for remove buttons
-carList.addEventListener('click', event => {
-    if (event.target.classList.contains('btn-remove')) {
-        const index = event.target.dataset.index;
-        removeCar(index);
-    }
-});
+// // Function to remove a car
+// function removeCar(index) {
+//     fetch(`api/removeCar/${index}`, {
+//         method: 'DELETE'
+//     })
+//         .then(response => response.json())
+//         .then(data => {
+//             console.log('Success:', data);
+//             //reload cars
+//             // const loadCarsBtn = document.getElementById('loadCarsBtn');
+//             loadCarsBtn.click();
+//         })
+//         .catch(error => {
+//             console.error('Error:', error);
+//         });
+// }
+// // Event delegation for remove buttons
+// carList.addEventListener('click', event => {
+//     if (event.target.classList.contains('btn-remove')) {
+//         const index = event.target.dataset.index;
+//         removeCar(index);
+//     }
+// });
