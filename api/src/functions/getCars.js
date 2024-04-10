@@ -5,12 +5,13 @@ app.http('getCars', {
     methods: ['GET'],
     authLevel: 'anonymous',
     handler: async (request, context) => {
+        console.log(data);
         return {
             status: 200,
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: data
+            body: JSON.stringify(data)
         };
     }
 });
